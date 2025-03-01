@@ -1,7 +1,6 @@
 # General Settings
 title: "Mila Cafe y Comunidad"
 email: "hola@mila.coffee"
-email_2: "ventas@mila.coffee"
 description: >- # this means to ignore newlines until "baseurl:"
   Mila Cafe y Comunidad es un espacio de encuentro y conexión, donde la comunidad y el café se unen para crear experiencias únicas.
 

@@ -1,8 +1,12 @@
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHZNLQKN2Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BHZNLQKN2Z');
-</script>
+<!-- The conditional check prevents errors if the tracking ID isn't set -->
+{% if site.google_analytics %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+{% endif %}

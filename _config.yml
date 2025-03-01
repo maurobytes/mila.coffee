@@ -100,4 +100,4 @@ feed:
       path: "/index.xml"
 
 # Google Analytics
-google_analytics: G-BHZNLQKN2Z
+google_analytics: G-BHZNLQKN2Z  # Replace with your actual GA4 tracking ID (starts with G-)
