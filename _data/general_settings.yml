@@ -1,29 +1,28 @@
 # General Settings
-title: "Snowlake premium jekyll template"
-email: "tortoizthemes@gmail.com"
-email_2: "support@tortoizthemes.com"
+title: "Mila Cafe y Comunidad"
+email: "hola@mila.coffee"
+email_2: "ventas@mila.coffee"
 description: >- # this means to ignore newlines until "baseurl:"
-  Snowlake is a multi-concept and powerful site template contains 
-  rich layouts with possibility of unlimited combinations & beautiful elements.
+  Mila Cafe y Comunidad es un espacio de encuentro y conexión, donde la comunidad y el café se unen para crear experiencias únicas.
 
 black_logo_1x: "/assets/images/logo.png"
 black_logo_2x: "/assets/images/logo@2x.png"
 light_logo_1x: "/assets/images/logo-light.png"
 light_logo_2x: "/assets/images/logo-light@2x.png"
 
-address_01: 'Moonshine St. <br>14/05 Light City,<br /> London, United Kingdom'
-phone_number: "+00 (123) 456 78 90"
-copyright_text: "© 2021 Snowlake. All rights reserved."
+address_01: 'Bartolo Soto <br>3950 Of. 1102 San Miguel,<br /> Santiago, Chile'
+phone_number: "+56 9 83816369"
+copyright_text: "© 2025 Mila Coffee. Todos los derechos resevados."
 
 google_analytics:
   enable: false
-  key: "UA-664136761-1"  # UA-664136761-1
+  key: "G-BHZNLQKN2Z"
 
 google_map: |
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.4564967931838!2d-122.03250858386237!3d37.33169997984258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b6e94ffe23%3A0x63bb79532baa6af4!2sApple+Campus!5e0!3m2!1sen!2str!4v1553850783971!5m2!1sen!2str" style="width:100%; height: 100%; border:0" allowfullscreen=""></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.445293269291!2d-70.65583492275493!3d-33.48978997337409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dacccc357d5b%3A0x906d57da894a765c!2sBartolo%20Soto%203950%2C%208910240%20San%20Miguel%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1740794573665!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 social_accounts:
-  title: "Follow Us"
+  title: "Siguenos en"
   links:
     - url: "#"
       icon: "jam jam-twitter"
@@ -31,7 +30,7 @@ social_accounts:
     - url: "#"
       icon: "jam jam-facebook"
 
-    - url: "#"
+    - url: "https://www.instagram.com/mila.coffee/"
       icon: "jam jam-instagram"
 
     - url: "#"
