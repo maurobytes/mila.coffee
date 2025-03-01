@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="shortcut icon" href="{{relative_url}}/assets/images/favicon.png"/>
-  <title>{% if page.title %} {{ page.title }} {% else %} {{ site.data.general_settings.title }}{% endif %}</title>
+  <title>{{ page.title }}</title>
   <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/css/bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/css/plugins.css"/>
   <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/revolution/css/settings.css"/>
@@ -24,9 +24,7 @@
     {% endfor %}
   {% endif %}
   <!--/.page wise css-->
-  {% if site.data.general_settings.google_analytics.enable %}
-   {% include analytics.html %}
-  {% endif %}
+  {% include google-analytics.html %}
 </head>
 <body {% if page.overflow %} class="overflow-hidden" {% endif %}>
   <div class="content-wrapper">

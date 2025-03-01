@@ -98,3 +98,6 @@ feed:
   collections:
     posts:
       path: "/index.xml"
+
+# Google Analytics
+google_analytics: G-BHZNLQKN2Z
