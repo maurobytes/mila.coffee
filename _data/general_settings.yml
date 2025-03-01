@@ -15,7 +15,7 @@ phone_number: "+56 9 83816369"
 copyright_text: "© 2025 Mila Coffee. Todos los derechos resevados."
 
 google_analytics:
-  enable: false
+  enable: true
   key: "G-BHZNLQKN2Z"
 
 google_map: |
