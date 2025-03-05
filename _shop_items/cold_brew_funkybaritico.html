@@ -1,0 +1,159 @@
+---
+layout: page
+title: "Página de Producto"
+sub_title: "Cold Brew con notas distintivas y salvajes"
+black_menu: true
+header_style: 'three'
+position: 9
+
+shop_page_cover: "/assets/images/art/s9.jpg"
+shop_page_cover_hover: "/assets/images/art/s9-2.jpg"
+
+carousel_images:
+- "/assets/images/art/ss1.jpg"
+- "/assets/images/art/ss2.jpg"
+- "/assets/images/art/ss3.jpg"
+
+product_info:
+  title: Cold Brew Funkybaritico
+  price: $7.990
+  text: Una experiencia única de café frío con notas salvajes y sabores complejos que sorprenderán a tu paladar con cada sorbo
+  rating: four
+
+product_details_tab: 
+  title: Detalle del Producto
+  text: |
+    Nuestro Cold Brew Funkybaritico es preparado con granos de café de especialidad seleccionados específicamente por sus notas distintivas y salvajes. Este café presenta un perfil de sabor único con notas fermentadas, frutales y un toque de acidez que lo hace verdaderamente "funky".
+     
+    El método de extracción en frío durante 20 horas permite destacar las características más complejas de estos granos, resultando en una experiencia de café única que desafía los límites tradicionales del sabor.
+  list:
+  - Elaborado con granos naturales procesados con fermentación extendida
+  - Sabor intenso con notas a frutas tropicales, chocolate oscuro y un toque de fermentación
+  - 100% natural, sin azúcares añadidos ni preservantes
+
+shipping_tab:
+  title: Envío y Devoluciones
+  text: |
+    Realizamos envíos a todo Santiago en un plazo de 24-48 horas. Para regiones, el tiempo de entrega es de 3-5 días hábiles según la ubicación. Todos nuestros productos viajan refrigerados para mantener su frescura y calidad.
+
+    Las devoluciones son aceptadas únicamente si el producto se encuentra sin abrir y en perfectas condiciones. Debes contactarnos dentro de las primeras 24 horas tras recibir tu pedido.
+    
+    Los costos de envío varían según la comuna o región. Para compras superiores a $25.000 en Santiago, el envío es gratuito.
+
+review_tab:
+  title: Reseñas (4)
+---
+<div class="wrapper light-wrapper">
+  <div class="container inner">
+    <div class="row">
+      <div class="col-lg-6 mb-0">
+        <div class="owl-slider-wrapper">
+          <div class="owl-carousel owl-slider-main mb-10">
+          {% for carousel_image in page.carousel_images %}
+            <div class="item"><img src={{carousel_image}} alt="" /></div>
+          {% endfor %}
+          </div>
+          <!-- /.owl-slider-main -->
+          <div class="owl-carousel owl-slider-nav mb-0">
+            {% for carousel_image in page.carousel_images %}
+              <div class="item"><img src={{carousel_image}} alt="" /></div>
+            {% endfor %}
+          </div>
+          <!-- /.owl-slider-nav -->
+        </div>
+        <!-- /.owl-slider-wrapper -->
+      </div>
+      <!-- /column -->
+      <aside class="col-lg-6 sidebar product">
+        <h1 class="post-title">{{page.product_info.title}}</h1>
+        <div class="price large"><span class="amount">{{page.product_info.price}}</span></div>
+        <div class="space30"></div>
+        <p>{{page.product_info.text}}.</p>
+        <span class="ratings {{page.product_info.rating}}"></span> <a href="#" class="hover">(4 Reseñas de Clientes)</a>
+        <div class="space20"></div>
+        <ul class="list-unstyled item-details product">
+          <li class="d-flex align-items-center pb-20"><strong class="color-dark pr-10">Formato:</strong>
+            <div class="form-group custom-select-wrapper mb-0">
+              <select class="custom-select">
+                <option value="concentrado" selected="selected">250ml Concentrado</option>
+                <option value="listo">500ml Listo para Beber</option>
+              </select>
+            </div>
+          </li>
+          <li class="d-flex align-items-center"><strong class="color-dark pr-10">Cantidad:</strong>
+            <div class="form-group item-quantity">
+              <input type="button" value="-" class="qtyminus" />
+              <input type="text" name='quantity' value='0' class="qty" />
+              <input type="button" value="+" class="qtyplus" />
+            </div>
+          </li>
+        </ul>
+        <a href="#" class="btn">Agregar al Carrito</a>
+      </aside>
+      <!-- /.sidebar -->
+    </div>
+    <!-- /.row -->
+    <div class="space50"></div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tab1-1">{{page.product_details_tab.title}}</a> </li>
+      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab1-2">{{page.shipping_tab.title}}</a> </li>
+      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab1-3">{{page.review_tab.title}}</a> </li>
+    </ul>
+    <!-- /.nav-tabs -->
+    <div class="tab-content">
+      <div class="tab-pane show active" id="tab1-1">
+        {{page.product_details_tab.text | markdownify }}
+        {% if page.product_details_tab.list %}
+        <ul class="unordered-list list-default">
+          {% for item in page.product_details_tab.list %}
+            <li>{{item}}.</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        <h4>Instrucciones</h4>
+        <p><strong>Para el formato de 250ml Concentrado:</strong></p>
+        <ul class="unordered-list list-default">
+          <li>Diluir una parte de concentrado con una parte de agua o leche.</li>
+          <li>Servir con hielo para una experiencia refrescante.</li>
+          <li>Conservar refrigerado hasta por 10 días después de abierto.</li>
+        </ul>
+
+        <p><strong>Para el formato de 500ml Listo para Beber:</strong></p>
+        <ul class="unordered-list list-default">
+          <li>Agitar bien antes de servir.</li>
+          <li>Servir frío, idealmente con hielo.</li>
+          <li>Consumir dentro de 3 días después de abierto.</li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="tab1-2">
+        {{page.shipping_tab.text | markdownify }}
+      </div>
+      <div class="tab-pane" id="tab1-3">
+        <div id="comments">
+          <ol id="singlecomments" class="commentlist">
+            {% for review in site.data.reviews %}
+              <li>
+                <div class="message">
+                  <!-- Using data from _data/reviews.json -->
+                  <figure class="user rounded"><img alt="" src="{{relative_url}}{{ review.avatar }}" /></figure>
+                  <div class="message-inner">
+                    <h6 class="comment-author"><a href="#">{{ review.name }}</a></h6>
+                    <p>{{ review.text }}.</p>
+                    <div class="meta"> <span class="date">{{ review.date }}</span><span><em class="ratings {{ review.ratings }}"></em></span> </div>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ol>
+        </div>
+        <!-- /#comments -->
+      </div>
+    </div>
+    <!-- /.tab-content -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+{% include products_carousel.html %}

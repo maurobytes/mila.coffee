@@ -1,0 +1,308 @@
+---
+layout: page
+title: "Página de Producto"
+sub_title: "Descubre una nueva experiencia de café cada mes"
+black_menu: true
+header_style: 'three'
+position: 11
+
+shop_page_cover: "/assets/images/art/s11.jpg"
+shop_page_cover_hover: "/assets/images/art/s11-2.jpg"
+
+carousel_images:
+- "/assets/images/art/ss1.jpg"
+- "/assets/images/art/ss2.jpg"
+- "/assets/images/art/ss3.jpg"
+
+product_info:
+  title: Suscripción Cold Brew
+  price: $19.990
+  text: Recibe mensualmente nuestra selección de Cold Brew Concentrado con diferentes orígenes y perfiles de sabor, junto con información detallada sobre los cafés y sus productores
+  rating: five
+
+product_details_tab: 
+  title: Detalle del Producto
+  text: |
+    Nuestra Suscripción Cold Brew es la manera perfecta de explorar el mundo del café de especialidad en su versión fría. Cada mes, recibirás en la comodidad de tu hogar nuestras creaciones exclusivas de Cold Brew Concentrado elaboradas con granos cuidadosamente seleccionados de diferentes orígenes y procesos.
+     
+    La suscripción incluye una experiencia completa que va más allá del café: conocerás la historia detrás de cada grano, desde la finca donde se cultivó hasta el perfil de sabor que desarrollamos en nuestro tostadero. Descubre nuevos sabores y amplía tu paladar con cada entrega mensual.
+  list:
+  - 2 botellas de Cold Brew Concentrado de 250ml de diferentes orígenes cada mes
+  - Ficha de trazabilidad con información sobre la finca, el productor y el proceso del café
+  - Guía de sabores y recomendaciones de preparación personalizadas
+  - Acceso a catas virtuales exclusivas para suscriptores
+
+shipping_tab:
+  title: Envío y Detalles de Suscripción
+  text: |
+    Tu suscripción será procesada inmediatamente después de la compra, y la primera caja será enviada dentro de los próximos 3 días hábiles. Las siguientes entregas llegarán entre los días 10 y 15 de cada mes.
+
+    Realizamos envíos a todo Santiago y regiones. El costo de envío está incluido en el precio de la suscripción para Santiago. Para regiones, se aplica un cargo adicional de $3.500 mensual.
+    
+    La suscripción tiene un período mínimo de 3 meses y se renueva automáticamente. Puedes cancelar tu suscripción en cualquier momento después del tercer mes contactándonos con al menos 7 días de anticipación a tu próxima entrega.
+
+review_tab:
+  title: Reseñas (8)
+
+faq_tab:
+  title: Preguntas Frecuentes
+---
+<div class="wrapper light-wrapper">
+  <div class="container inner">
+    <div class="row">
+      <div class="col-lg-6 mb-0">
+        <div class="owl-slider-wrapper">
+          <div class="owl-carousel owl-slider-main mb-10">
+          {% for carousel_image in page.carousel_images %}
+            <div class="item"><img src={{carousel_image}} alt="" /></div>
+          {% endfor %}
+          </div>
+          <!-- /.owl-slider-main -->
+          <div class="owl-carousel owl-slider-nav mb-0">
+            {% for carousel_image in page.carousel_images %}
+              <div class="item"><img src={{carousel_image}} alt="" /></div>
+            {% endfor %}
+          </div>
+          <!-- /.owl-slider-nav -->
+        </div>
+        <!-- /.owl-slider-wrapper -->
+      </div>
+      <!-- /column -->
+      <aside class="col-lg-6 sidebar product">
+        <h1 class="post-title">{{page.product_info.title}}</h1>
+        <div class="price large"><span class="amount">{{page.product_info.price}}</span></div>
+        <div class="space30"></div>
+        <p>{{page.product_info.text}}.</p>
+        <span class="ratings {{page.product_info.rating}}"></span> <a href="#" class="hover">(8 Reseñas de Clientes)</a>
+        <div class="space20"></div>
+        <ul class="list-unstyled item-details product">
+          <li class="d-flex align-items-center pb-20"><strong class="color-dark pr-10">Plan:</strong>
+            <div class="form-group custom-select-wrapper mb-0">
+              <select class="custom-select">
+                <option value="mensual" selected="selected">Mensual</option>
+                <option value="trimestral">Trimestral (5% descuento)</option>
+                <option value="semestral">Semestral (10% descuento)</option>
+              </select>
+            </div>
+          </li>
+          <li class="d-flex align-items-center"><strong class="color-dark pr-10">Cantidad:</strong>
+            <div class="form-group item-quantity">
+              <input type="button" value="-" class="qtyminus" />
+              <input type="text" name='quantity' value='1' class="qty" />
+              <input type="button" value="+" class="qtyplus" />
+            </div>
+          </li>
+        </ul>
+        <a href="#" class="btn">Suscribirme Ahora</a>
+      </aside>
+      <!-- /.sidebar -->
+    </div>
+    <!-- /.row -->
+    <div class="space50"></div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tab1-1">{{page.product_details_tab.title}}</a> </li>
+      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab1-2">{{page.shipping_tab.title}}</a> </li>
+      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab1-3">{{page.review_tab.title}}</a> </li>
+      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab1-4">{{page.faq_tab.title}}</a> </li>
+    </ul>
+    <!-- /.nav-tabs -->
+    <div class="tab-content">
+      <div class="tab-pane show active" id="tab1-1">
+        {{page.product_details_tab.text | markdownify }}
+        {% if page.product_details_tab.list %}
+        <ul class="unordered-list list-default">
+          {% for item in page.product_details_tab.list %}
+            <li>{{item}}.</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class="space20"></div>
+        <h4>¿Qué incluye cada entrega mensual?</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box bg-white shadow">
+              <div class="icon icon-svg mb-20"><img src="/assets/images/icons/bulb.svg" alt=""></div>
+              <h5>Café Rotativo</h5>
+              <p>Cada mes descubrirás diferentes orígenes de café. Un mes podrás disfrutar de un cold brew de Etiopía con notas florales, y al siguiente, un cold brew de Colombia con notas a chocolate negro.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box bg-white shadow">
+              <div class="icon icon-svg mb-20"><img src="/assets/images/icons/gift.svg" alt=""></div>
+              <h5>Ficha de Trazabilidad</h5>
+              <p>Te contamos la historia detrás de cada café: desde la altitud de cultivo, el productor, el proceso, hasta el perfil de sabor que desarrollamos en nuestro tostadero.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box bg-white shadow">
+              <div class="icon icon-svg mb-20"><img src="/assets/images/icons/heart.svg" alt=""></div>
+              <h5>Guía de Preparación</h5>
+              <p>Te enseñamos diferentes formas de disfrutar tu cold brew, desde recetas clásicas hasta combinaciones creativas que potencian los sabores particulares de cada origen.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box bg-white shadow">
+              <div class="icon icon-svg mb-20"><img src="/assets/images/icons/home.svg" alt=""></div>
+              <h5>Catas Virtuales</h5>
+              <p>Acceso exclusivo a nuestras catas virtuales mensuales donde nuestros baristas explican las características de los cafés del mes y responden todas tus dudas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab1-2">
+        {{page.shipping_tab.text | markdownify }}
+        
+        <h4>Calendario de Envíos</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fecha de suscripción</th>
+              <th>Primera entrega</th>
+              <th>Entregas regulares</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Del 1 al 15 del mes</td>
+              <td>Dentro de 3 días hábiles</td>
+              <td>Entre el 10 y 15 del mes siguiente</td>
+            </tr>
+            <tr>
+              <td>Del 16 al 31 del mes</td>
+              <td>Dentro de 3 días hábiles</td>
+              <td>Entre el 10 y 15 del mes siguiente</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane" id="tab1-3">
+        <div id="comments">
+          <ol id="singlecomments" class="commentlist">
+            {% for review in site.data.reviews %}
+              <li>
+                <div class="message">
+                  <!-- Using data from _data/reviews.json -->
+                  <figure class="user rounded"><img alt="" src="{{relative_url}}{{ review.avatar }}" /></figure>
+                  <div class="message-inner">
+                    <h6 class="comment-author"><a href="#">{{ review.name }}</a></h6>
+                    <p>{{ review.text }}.</p>
+                    <div class="meta"> <span class="date">{{ review.date }}</span><span><em class="ratings {{ review.ratings }}"></em></span> </div>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ol>
+        </div>
+        <!-- /#comments -->
+      </div>
+      <div class="tab-pane" id="tab1-4">
+        <div class="accordion-wrapper" id="accordion1">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0"> <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">¿Puedo cambiar la dirección de envío durante mi suscripción?</a> </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
+              <div class="card-body">
+                <p>Sí, puedes cambiar tu dirección de envío en cualquier momento. Solo debes notificarnos con al menos 5 días de anticipación a tu próxima entrega para asegurarnos de actualizar la información a tiempo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0"> <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">¿Qué pasa si no estoy en casa cuando llega mi pedido?</a> </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
+              <div class="card-body">
+                <p>Nuestro servicio de mensajería intentará contactarte antes de la entrega. Si no estás disponible, intentarán dejar el paquete con un vecino o conserje. Si esto no es posible, harán un segundo intento al día siguiente. El Cold Brew viaja en packaging refrigerado que mantiene la temperatura adecuada hasta por 48 horas.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0"> <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">¿Puedo pausar mi suscripción si salgo de vacaciones?</a> </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion1">
+              <div class="card-body">
+                <p>Claro que sí. Puedes pausar tu suscripción por hasta 2 meses. Solo necesitas avisarnos con al menos 7 días de anticipación a tu próxima entrega y te indicaremos cuándo se reactivará automáticamente.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h5 class="mb-0"> <a class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">¿Qué métodos de pago aceptan para la suscripción?</a> </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion1">
+              <div class="card-body">
+                <p>Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), transferencia bancaria y WebPay. El cobro de la suscripción se realizará automáticamente cada mes en la misma fecha de tu primera compra.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h5 class="mb-0"> <a class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">¿Puedo elegir los cafés que recibiré cada mes?</a> </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion1">
+              <div class="card-body">
+                <p>Nuestra suscripción está diseñada como una experiencia de descubrimiento, por lo que los cafés son seleccionados por nuestros expertos cada mes. Sin embargo, si tienes preferencias específicas (por ejemplo, si prefieres cafés con notas más frutales o más achocolatadas), puedes indicárnoslo al momento de la suscripción y haremos lo posible por adaptarnos a tus gustos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.tab-content -->
+
+    <div class="space50"></div>
+    <h3 class="mb-30">Algunos de los cafés que podrás descubrir</h3>
+    <div class="grid grid-view boxed">
+      <div class="tiles">
+        <div class="row isotope">
+          <div class="item item-detailed grid-sizer col-md-6 col-lg-4">
+            <div class="box bg-white shadow p-30">
+              <figure class="main rounded mb-30"><img src="/assets/images/art/ss1.jpg" alt="" /></figure>
+              <div class="item-content">
+                <h5 class="mb-0">Etiopía Yirgacheffe</h5>
+                <div class="meta mb-10"><span class="color-dark">Cooperativa Banco Gotete</span> <span class="ratings four"></span></div>
+                <p>Procesado lavado con notas florales, cítricas y un toque de bergamota. Acidez vibrante y cuerpo ligero.</p>
+              </div>
+              <!-- /.item-content -->
+            </div>
+          </div>
+          <!-- /.item -->
+          <div class="item item-detailed grid-sizer col-md-6 col-lg-4">
+            <div class="box bg-white shadow p-30">
+              <figure class="main rounded mb-30"><img src="/assets/images/art/ss2.jpg" alt="" /></figure>
+              <div class="item-content">
+                <h5 class="mb-0">Colombia Huila</h5>
+                <div class="meta mb-10"><span class="color-dark">Finca El Mirador</span> <span class="ratings five"></span></div>
+                <p>Proceso honey con notas a frutos rojos, caramelo y chocolate negro. Acidez media y cuerpo aterciopelado.</p>
+              </div>
+              <!-- /.item-content -->
+            </div>
+          </div>
+          <!-- /.item -->
+          <div class="item item-detailed grid-sizer col-md-6 col-lg-4">
+            <div class="box bg-white shadow p-30">
+              <figure class="main rounded mb-30"><img src="/assets/images/art/ss3.jpg" alt="" /></figure>
+              <div class="item-content">
+                <h5 class="mb-0">Guatemala Antigua</h5>
+                <div class="meta mb-10"><span class="color-dark">Finca La Esperanza</span> <span class="ratings four"></span></div>
+                <p>Proceso natural con notas a chocolate con leche, nueces y un toque de naranja. Acidez baja y cuerpo completo.</p>
+              </div>
+              <!-- /.item-content -->
+            </div>
+          </div>
+          <!-- /.item -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.tiles -->
+    </div>
+    <!-- /.grid -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+{% include products_carousel.html %}
