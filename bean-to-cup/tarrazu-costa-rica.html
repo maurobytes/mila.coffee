@@ -119,18 +119,27 @@ flavor_profile:
 
 brewing_methods:
   enable: true
-  title: "Métodos de Preparación" 
-  sub_title: |
-    "Diferentes formas de disfrutar este excepcional café de Tarrazú"
+  title: "Cómo Disfrutar Tu Cold Brew"
+  sub_title: "Diferentes formas de disfrutar este excepcional café de Tarrazú"
   methods:
-  - method: "Pour Over"
-    instructions: "Molienda media-fina. Agua a 92°C. Ratio 1:16 (18g café/290g agua). Tiempo total: 2:45-3:15 min. Resalta la acidez brillante y notas frutales."
-  - method: "Espresso"
-    instructions: "Molienda fina. 18g de café para 36g de líquido en 25-30 segundos. Temperatura: 93°C. Intensifica las notas de caramelo y chocolate."
-  - method: "AeroPress"
-    instructions: "Molienda media. 15g de café, 240g de agua a 88°C. Método invertido, 1:30 de infusión total. Equilibra dulzor y acidez."
-  - method: "Cold Brew"
-    instructions: "Molienda gruesa. Ratio 1:5. 18 horas a temperatura ambiente. Potencia el dulzor natural y reduce la acidez percibida, revelando notas de chocolate con leche."
+  - method: "Con Agua"
+    instructions: "Diluye el concentrado en proporción 1:1 con agua filtrada fría. Sirve sobre hielo para una bebida refrescante que resalta las notas frutales y el caramelo natural del café de Tarrazú. Ideal para apreciar la complejidad del origen."
+    video_id: "165101721"
+  - method: "Con Leche"
+    instructions: "Mezcla el concentrado en proporción 1:1 con tu leche de preferencia (vaca, almendras, avena o coco). Las notas de chocolate con leche se intensifican, creando una bebida sedosa con un perfil más cremoso y dulce."
+    video_id: "165101722"
+  - method: "Cold Foam"
+    instructions: "Prepara tu Cold Brew diluido con agua (1:1) y corona con una capa de espuma fría de leche. Para la espuma, bate leche fría con una pizca de sal hasta obtener una textura ligera y cremosa. La combinación de texturas realza la experiencia sensorial."
+    video_id: "165101723"
+  - method: "Vanilla Cream"
+    instructions: "Añade 10ml de sirope de vainilla a tu Cold Brew diluido con leche (1:1). Completa con una cucharada de crema batida casera y una pizca de canela. Las notas de vainilla complementan perfectamente el caramelo y chocolate del café Tarrazú."
+    video_id: "165101724"
+  - method: "Cold Brew Tonica"
+    instructions: "Vierte 60ml de concentrado de Cold Brew en un vaso alto con hielo y completa con 120ml de agua tónica. Decora con una rodaja de naranja o limón. Esta refrescante combinación realza las notas cítricas del café con un toque burbujeante inesperado."
+    video_id: "165101725"
+  - method: "Affogato Cold Brew"
+    instructions: "Coloca una bola de helado de vainilla de calidad en un vaso y vierte lentamente 60ml de concentrado de Cold Brew. El contraste de temperaturas y la cremosidad del helado crean una deliciosa experiencia de postre con café."
+    video_id: "165101726"
 ---
 
 <div class="content-wrapper">
@@ -354,16 +363,28 @@ brewing_methods:
             </div>
             <div id="accordion-collapse-{{forloop.index}}" class="collapse" aria-labelledby="accordion-heading-{{forloop.index}}" data-parent="#accordion-brewing">
               <div class="card-body">
-                <p>{{method.instructions}}</p>
+                <div class="row align-items-center">
+                  <div class="col-lg-6">
+                    <p>{{method.instructions}}</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="{{method.video_id}}"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           {% endfor %}
         </div>
+        <div class="space30"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+        <p>Las leches vegetales de almendra, avena o coco son excelentes opciones para combinar con nuestro Cold Brew. Cada una aporta matices únicos que complementan las notas del café Tarrazú.</p>
       </div>
     </div>
     {% endif %}
-    </div>
 
     <!-- Call to Action -->
     <div class="space160"></div>
